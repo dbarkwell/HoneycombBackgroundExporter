@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HoneycombBackgroundExporter", "src\HoneycombBackgroundExporter\HoneycombBackgroundExporter.csproj", "{F669EE25-462B-4191-8C8C-F9B2B19C23B0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HoneycombBackgroundExporterTests", "tests\HoneycombBackgroundExporterTests\HoneycombBackgroundExporterTests.csproj", "{F4B50C95-101D-47DE-94B7-E8527B759C1E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F669EE25-462B-4191-8C8C-F9B2B19C23B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F669EE25-462B-4191-8C8C-F9B2B19C23B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F669EE25-462B-4191-8C8C-F9B2B19C23B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F669EE25-462B-4191-8C8C-F9B2B19C23B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4B50C95-101D-47DE-94B7-E8527B759C1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4B50C95-101D-47DE-94B7-E8527B759C1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4B50C95-101D-47DE-94B7-E8527B759C1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4B50C95-101D-47DE-94B7-E8527B759C1E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
