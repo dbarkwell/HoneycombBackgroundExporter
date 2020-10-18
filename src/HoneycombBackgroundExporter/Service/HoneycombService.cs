@@ -9,8 +9,11 @@ namespace HoneycombBackgroundExporter.Service
 {
     internal class HoneycombService : IHoneycombService
     {
+        private const string BaseUri = "https://api.honeycomb.io/1/";
+        private const string EventsUri = BaseUri + "events/";
+        private const string BatchUri = BaseUri + "batch/";
         private readonly HttpClient _httpClient;
-
+        
         public HoneycombService(HttpClient httpClient)
         {
             _httpClient = httpClient;
@@ -19,7 +22,7 @@ namespace HoneycombBackgroundExporter.Service
         public async Task<HttpResponseMessage> SendAsync(string dataset, DateTime eventTime,
             HoneycombEvent honeycombEvent)
         {
-            return await SendHoneycombRequestAsync($"https://api.honeycomb.io/1/events/{dataset}", eventTime,
+            return await SendHoneycombRequestAsync($"{EventsUri}/{dataset}", eventTime,
                     honeycombEvent)
                 .ConfigureAwait(false);
         }
@@ -27,7 +30,7 @@ namespace HoneycombBackgroundExporter.Service
         public async Task<HttpResponseMessage> SendBatchAsync(string dataset, DateTime eventTime,
             IEnumerable<HoneycombEvent> honeycombEvents)
         {
-            return await SendHoneycombRequestAsync($"https://api.honeycomb.io/1/batch/{dataset}", eventTime,
+            return await SendHoneycombRequestAsync($"{BatchUri}/{dataset}", eventTime,
                     honeycombEvents)
                 .ConfigureAwait(false);
         }
