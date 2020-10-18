@@ -22,7 +22,7 @@ namespace HoneycombBackgroundExporter.Service
         public async Task<HttpResponseMessage> SendAsync(string dataset, DateTime eventTime,
             HoneycombEvent honeycombEvent)
         {
-            return await SendHoneycombRequestAsync($"{EventsUri}/{dataset}", eventTime,
+            return await SendHoneycombRequestAsync($"{EventsUri}{dataset}", eventTime,
                     honeycombEvent)
                 .ConfigureAwait(false);
         }
@@ -30,7 +30,7 @@ namespace HoneycombBackgroundExporter.Service
         public async Task<HttpResponseMessage> SendBatchAsync(string dataset, DateTime eventTime,
             IEnumerable<HoneycombEvent> honeycombEvents)
         {
-            return await SendHoneycombRequestAsync($"{BatchUri}/{dataset}", eventTime,
+            return await SendHoneycombRequestAsync($"{BatchUri}{dataset}", eventTime,
                     honeycombEvents)
                 .ConfigureAwait(false);
         }
