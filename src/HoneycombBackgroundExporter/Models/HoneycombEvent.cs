@@ -16,15 +16,11 @@ namespace HoneycombBackgroundExporter.Models
             // add library https://github.com/open-telemetry/opentelemetry-specification/pull/494/files
         }
 
-        [JsonPropertyName("data")] 
-        public Dictionary<string, object?> Data { get; }
+        [JsonPropertyName("data")] public Dictionary<string, object?> Data { get; }
 
         public void PopulateData(IEnumerable<KeyValuePair<string, string?>> data)
         {
-            foreach (var (key, value) in data)
-            {
-                Data.Add(key, value);
-            }
+            foreach (var (key, value) in data) Data.Add(key, value);
         }
 
         public void PopulateData(IEnumerable<KeyValuePair<string, object>>? data)
@@ -32,10 +28,7 @@ namespace HoneycombBackgroundExporter.Models
             if (data == null)
                 return;
 
-            foreach (var (key, value) in data)
-            {
-                Data.Add(key, value);
-            }
+            foreach (var (key, value) in data) Data.Add(key, value);
         }
     }
 }

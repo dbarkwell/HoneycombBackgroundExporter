@@ -13,7 +13,7 @@ namespace HoneycombBackgroundExporter.Service
         private const string EventsUri = BaseUri + "events/";
         private const string BatchUri = BaseUri + "batch/";
         private readonly HttpClient _httpClient;
-        
+
         public HoneycombService(HttpClient httpClient)
         {
             _httpClient = httpClient;

@@ -9,24 +9,18 @@ namespace HoneycombBackgroundExporter.Middleware
     public static class HoneycombExporterMiddlewareExtensions
     {
         public static void AddHoneycombExporter(
-            this IServiceCollection services, 
-            ChannelReader<Activity> channelReader, 
-            string teamId, 
+            this IServiceCollection services,
+            ChannelReader<Activity> channelReader,
+            string teamId,
             string dataset)
         {
-            services.AddHttpClient<HoneycombService>(httpClient =>
-            {
-                httpClient.DefaultRequestHeaders.Add("X-Honeycomb-Team", teamId);
-            });
-            services.AddHostedService(
-                sp =>
-                    new HoneycombBackgroundService(channelReader, dataset, sp.GetService<HoneycombService>()));
+            AddHoneycombExporter(services, channelReader, teamId, activity => dataset);
         }
-        
+
         public static void AddHoneycombExporter(
-            this IServiceCollection services, 
-            ChannelReader<Activity> channelReader, 
-            string teamId, 
+            this IServiceCollection services,
+            ChannelReader<Activity> channelReader,
+            string teamId,
             Func<Activity, string> dataset)
         {
             services.AddHttpClient<HoneycombService>(httpClient =>
